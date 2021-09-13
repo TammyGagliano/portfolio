@@ -1,0 +1,127 @@
+/* GLOBAL STYLES */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.container {
+    display: flex;
+    display: block;
+	max-width: 100%;
+	padding: 20px;
+	margin: 0 auto;
+}
+
+/* HEADER STYLES */
+
+.header {
+    background-color: black;
+    color: white;
+}
+
+.photo {
+    max-width: 100%;
+	height: auto;
+    padding: 10px;
+}
+
+img {
+    border-radius: 50%;
+    padding: 5px;
+}
+
+/* HERO STYLES */
+
+#hero {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/scott-webb-R5fIqR8nPu0-unsplash.jpg");
+    min-height: 20em;
+    height: 50%;
+    align-self: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.hero-text {
+    color: white;
+    text-align: right;
+}
+
+/* NAVIGATION STYLES */
+
+.nav {
+    font-size: 1.25em;
+    color: white;
+}
+
+.nav ul {
+    display: flex;
+    align-items: center; 
+    padding: 0px 15px;
+    list-style-type: none;
+    justify-content:flex-end;
+}
+
+.nav ul li {
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* ABOUT ME STYLES */
+
+#about {
+   flex-direction: column;
+   justify-content: flex-start;
+}
+
+/* WORK STYLES */
+
+#work {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* CONTACT STYLES */
+
+#contact {
+    display: flex;
+    text-decoration: none;
+}
+
+.left {
+    width: 20vw;
+    text-align: right;
+    color: black;
+    margin: 10px;
+    padding: 10px;
+}
+
+.right {
+    width: 80vw;
+    margin: 10px;
+}
+
+/* MOBILE NAVIGATION STYLES */
+
+@media all and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+    nav ul li {
+        text-align: center;
+    }
+}
