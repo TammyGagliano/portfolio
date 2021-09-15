@@ -11,36 +11,18 @@ body {
     margin: 0;
 }
 
-/* Render the `main` element consistently in IE. */
-main {
-    display: block;
-}
-
-
 /* HEADER STYLES */
 
-.header {
-    background-color: black;
-    color: white;
-}
-
-.photo {
-    padding: 10px;
-}
-
 img {
-    border-radius: 50%;
+    border-radius: 60%;
     padding: 2.5px;
 }
 /* NAVIGATION STYLES */
 
-.nav {
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none; }
-  
+.nav-item {
+    text-decoration: underline;
+    padding: 3px;
+}  
  
 /* HERO STYLES */
 
@@ -50,296 +32,91 @@ img {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/scott-webb-R5fIqR8nPu0-unsplash.jpg");
     min-height: 20em;
     height: 50%;
-    align-self: center;
+    align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 
 .hero-text {
-    color: white;
+    color: #eee;
+    background: rgba(5,5,5,0.7); 
+    opacity: 75%;
+    padding: 2em;
+    border-radius: 15px;
     text-align: right;
+    margin-top: 15%;
+    margin-left: 65%;
+    h1 {font-size: 2.3rem; line-height: 1.1;}   
+}
+
+.hero-container {
+    margin: 0 auto;
+    padding: 1.5em 5%;
+}
+
+/* Media Queries for HERO STYLES smaller screen sizes */
+
+@media only screen and (max-width: 600px) {
+    .hero-text {
+        margin-left: 0%;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .hero-container {
+        margin-left: 0%;
+    }
 }
 
 
 /* ABOUT ME STYLES */
 
+
+
+
 /* WORK STYLES */
+
+.work {
+    border: 2px solid black;
+    opacity: rgba(0, 0, 0, 0.5);
+}
 
 /* CONTACT STYLES */
 
 
 
-
-
-
-/* ===================================================================
- * # resume 
- *
- * ------------------------------------------------------------------- */
-.s-resume {
-    background-color: white;
-    padding-top: calc(6 * var(--space));
-    padding-bottom: var(--vspace-4);
-}
-
-.s-resume__section {
-    border-bottom: 1px solid var(--color-border);
-    padding-bottom: var(--vspace-0_75);
-    margin-bottom: var(--vspace-2_5);
-}
-
-.s-resume__section:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-
-/* ------------------------------------------------------------------- 
- * ## resume block
- * ------------------------------------------------------------------- */
-.resume-block {
-    margin-bottom: var(--vspace-1_75);
-}
-
-.resume-block h4 {
-    line-height: 1.080;
-    margin-top: 0;
-    margin-bottom: var(--vspace-0_25);
-}
-
-.resume-block__header-meta {
-    font-family: var(--font-2);
-    font-size: calc(var(--text-size) * 1.1111);
-    font-style: italic;
-    margin-top: -.4rem;
-    margin-bottom: var(--vspace-0_75);
-}
-
-.resume-block__header-meta span:first-child {
-    margin-right: .6rem;
-}
-
-.resume-block__header-date {
-    display: inline-block;
-    font-family: var(--font-1);
-    font-size: calc(var(--text-size) * 0.8889);
-    font-size: var(--text-sm);
-    font-style: normal;
-    text-transform: uppercase;
-    letter-spacing: .12em;
-    color: var(--color-text-light);
-}
-
-.resume-block__header-date::before {
-    content: "\2022";
-    color: var(--color-text);
-    margin-right: .2rem;
-}
-
-/* ------------------------------------------------------------------- 
- * responsive:
- * resume
- * ------------------------------------------------------------------- */
-@media screen and (max-width: 800px) {
-    .s-resume {
-        padding-top: var(--vspace-4);
-    }
-    .s-resume__section .column:first-child {
-        text-align: center;
-    }
-}
-
-
-
-/* ------------------------------------------------------------------- 
- * ## grid variables
- * ------------------------------------------------------------------- */
-:root {
-
-    /* widths for rows and containers
-     */
-    --width-full    : 100%;
-    --width-max     : 1080px;
-    --width-wide    : 1400px;
-    --width-wider   : 1600px;
-    --width-widest  : 1800px;
-    --width-narrow  : 800px;
-    --width-narrower: 600px;
-    --width-grid-max: var(--width-max);
-
-    /* gutters
-     */
-    --gutter-lg : 2.4rem;
-    --gutter-md : 2rem;
-    --gutter-mob: 1rem;
-}
-
-
-
-
-
-
-
-/* ===================================================================
- * # Grid v3.0.0
- *
- *   -----------------------------------------------------------------
- * - Grid breakpoints are based on MAXIMUM WIDTH media queries, 
- *   meaning they apply to that one breakpoint and ALL THOSE BELOW IT.
- * - Grid columns without a specified width will automatically layout 
- *   as equal width columns.
- * ------------------------------------------------------------------- */
-
-/* rows
- * ------------------------------------- */
 .row {
-    width: 92%;
+    width: 50%;
     max-width: var(--width-grid-max);
     margin: 0 auto;
-    display: -ms-flexbox;
-    display: -webkit-box;
     display: flex;
-    -ms-flex-flow: row wrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
     flex-flow: row wrap;
+    padding: 30px;
+    text-align: right;
+    
 }
 
-.row .row {
-    width: auto;
-    max-width: none;
-    margin-left: calc(var(--gutter-lg) * -1);
-    margin-right: calc(var(--gutter-lg) * -1);
-}
-
-/* columns
- * -------------------------------------- */
 .column {
-    -ms-flex: 1 1 0%;
-    -webkit-box-flex: 1;
     flex: 1 1 0%;
-    padding: 0 var(--gutter-lg);
-}
-
-.collapse>.column, .column.collapse {
     padding: 0;
 }
 
-/* flex row containers utility classes
- */
-.row.row-wrap {
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+@media only screen and (max-width: 600px) {
+    . {
+        margin-left: 0%;
+    }
+}
+@media only screen and (min-width: 600px) {
+    . {
+        margin-left: 0%;
+    }
 }
 
-.row.row-nowrap {
-    -ms-flex-wrap: none;
-    flex-wrap: nowrap;
-}
+/* where do i add a vertical line */
+.verticalLine {
+    border-right: 2px solid black;
+  }
 
-.row.row-y-top {
-    -ms-flex-align: start;
-    -webkit-box-align: start;
-    align-items: flex-start;
-}
 
-.row.row-y-bottom {
-    -ms-flex-align: end;
-    -webkit-box-align: end;
-    align-items: flex-end;
-}
 
-.row.row-y-center {
-    -ms-flex-align: center;
-    -webkit-box-align: center;
-    align-items: center;
-}
-
-.row.row-stretch {
-    -ms-flex-align: stretch;
-    -webkit-box-align: stretch;
-    align-items: stretch;
-}
-
-.row.row-baseline {
-    -ms-flex-align: baseline;
-    -webkit-box-align: baseline;
-    align-items: baseline;
-}
-
-.row.row-x-left {
-    -ms-flex-pack: start;
-    -webkit-box-pack: start;
-    justify-content: flex-start;
-}
-
-.row.row-x-right {
-    -ms-flex-pack: end;
-    -webkit-box-pack: end;
-    justify-content: flex-end;
-}
-
-.row.row-x-center {
-    -ms-flex-pack: center;
-    -webkit-box-pack: center;
-    justify-content: center;
-}
-
-/* flex item utility alignment classes
- */
-.align-center {
-    margin: auto;
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center;
-}
-
-.align-left {
-    margin-right: auto;
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center;
-}
-
-.align-right {
-    margin-left: auto;
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center;
-}
-
-.align-x-center {
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.align-x-left {
-    margin-right: auto;
-}
-
-.align-x-right {
-    margin-left: auto;
-}
-
-.align-y-center {
-    -webkit-align-self: center;
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center;
-}
-
-.align-y-top {
-    -webkit-align-self: flex-start;
-    -ms-flex-item-align: start;
-    align-self: flex-start;
-}
-
-.align-y-bottom {
-    -webkit-align-self: flex-end;
-    -ms-flex-item-align: end;
-    align-self: flex-end;
-}
+  
