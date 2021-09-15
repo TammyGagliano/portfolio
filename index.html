@@ -3,74 +3,79 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit-no"/>
   <title>Tammy Gagliano Portfolio</title>
   <link rel="stylesheet" href="main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <header class="header">
-    <h1 class="photo"><img src="images/ME.jpg" width="40px" height="50px" alt="Tammy Gagliano">Tammy Gagliano</img></h1>
-    
-    <nav class="nav">
-        <ul>
-            <li class="item"><a href="#about">About Me</a></li>
-            <li class="item"><a href="#work">Work</a></li>
-            <li class="item"><a href="#contact">Contact Me</a></li>
-            <li class="item"><a href="#resume">Resume</a></li>
-        </ul>
-    </nav>
-    
-  </header>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Tammy Gagliano
+            <img class="image" src="../portfolio/images/ME.jpg" width="50px" height="60px" alt="Tammy Gagliano">
+            </a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+              <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
+              <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
 
   <main class="main">
-    <div class="container" id="hero">
+    <div class="hero-container" id="hero">
           <h2 class="hero-text"</h2>Cool Subtitle Here!</h2>
     </div>
 
-    <div class="container" id="about">
-        <div class="left">
-            <h2>About Me</h2>
+
+    <section id="resume" class="s-resume target-section">
+    
+    <div class="row s-resume__section">
+        <div class="column large-3 tab-12">
+            <h3>About Me</h3>
         </div>
-        <div class="right">
-            <p>Hi! My name is Tammy Gagliano. I am happily married and live in Birmingham, Alabama. My husband's name is Andy, and have one son, Christopher. Both Andy and I come from very large families.</p><br>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
+        <div class="column large-9 tab-12">
+            <div class="resume-block">
+                <p>Hi! My name is Tammy Gagliano. I am happily married and live in Birmingham, Alabama. My husband's name is Andy, and have one son, Christopher. Both Andy and I come from very large families.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>            </div> <!-- end resume-block -->
+        </div>
+    </div> 
+
+    <div class="row s-resume__section">
+        <div class="column large-3 tab-12">
+            <h3>Work</h3>
+        </div>
+        <div class="column large-9 tab-12">
+            <div class="resume-block">
+                <div class="one">
+                    Surf Report MERN Stack
+            </div>
+            <div class="two">
+                    LED Wall Node/IoT
+                    Calculator React/Javascript/CSS
+            </div>
+            <div class="three">
+                    Pastel Puzzels MERN Stack
+                    Run Buddy HTML/CSS
+            </div>
+            </div> 
+         </div> 
     </div>
 
-    <div class="container" id="work">
-        <div class="left">
-            <h2>Work</h2>
+    <div class="row s-resume__section">
+        <div class="column large-3 tab-12">
+            <h3>Contact Me</h3>
         </div>
-        <div class="right1">
-            Surf Report MERN Stack
-            LED Wall Node/IoT
-            Calculator React/Javascript/CSS
-            Pastel Puzzels MERN Stack
-            Run Buddy HTML/CSS
-        </div>
-        <div class="right2">
-            Surf Report MERN Stack
-            LED Wall Node/IoT
-            Calculator React/Javascript/CSS
-            Pastel Puzzels MERN Stack
-            Run Buddy HTML/CSS
-        </div><div class="right3">
-            Surf Report MERN Stack
-            LED Wall Node/IoT
-            Calculator React/Javascript/CSS
-            Pastel Puzzels MERN Stack
-            Run Buddy HTML/CSS
-        </div>
-    </div>
-
-    <div class="container" id="contact">
-        <div class="left">
-            <h2>Contact Me</h2>
-        </div>
-        <div class="right">        
+        <div class="column large-9 tab-12">
+            <div class="resume-block">
             <ul>
             <li>205-540-6295</li>
             <li>tracsd@gmail.com</li>
@@ -79,6 +84,13 @@
             <li>Spotify</li>
             </ul>
         </div>
+    </div>
+</div>
+
+    </section>
+
+
+            
     </div>
   </main>
 

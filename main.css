@@ -1,5 +1,4 @@
 /* GLOBAL STYLES */
-
 * {
     box-sizing: border-box;
     padding: 0;
@@ -9,15 +8,14 @@
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 16px;
+    margin: 0;
 }
 
-.container {
-    display: flex;
+/* Render the `main` element consistently in IE. */
+main {
     display: block;
-	max-width: 100%;
-	padding: 20px;
-	margin: 0 auto;
 }
+
 
 /* HEADER STYLES */
 
@@ -27,16 +25,23 @@ body {
 }
 
 .photo {
-    max-width: 100%;
-	height: auto;
     padding: 10px;
 }
 
 img {
     border-radius: 50%;
-    padding: 5px;
+    padding: 2.5px;
 }
+/* NAVIGATION STYLES */
 
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none; }
+  
+ 
 /* HERO STYLES */
 
 #hero {
@@ -56,72 +61,285 @@ img {
     text-align: right;
 }
 
-/* NAVIGATION STYLES */
-
-.nav {
-    font-size: 1.25em;
-    color: white;
-}
-
-.nav ul {
-    display: flex;
-    align-items: center; 
-    padding: 0px 15px;
-    list-style-type: none;
-    justify-content:flex-end;
-}
-
-.nav ul li {
-    padding: 0.5rem;
-    text-align: center;
-}
-
-.nav ul li a {
-    color: white;
-    text-decoration: none;
-}
 
 /* ABOUT ME STYLES */
 
-#about {
-   flex-direction: column;
-   justify-content: flex-start;
-}
-
 /* WORK STYLES */
-
-#work {
-    flex-direction: column;
-    justify-content: space-between;
-}
 
 /* CONTACT STYLES */
 
-#contact {
-    display: flex;
-    text-decoration: none;
+
+
+
+
+
+/* ===================================================================
+ * # resume 
+ *
+ * ------------------------------------------------------------------- */
+.s-resume {
+    background-color: white;
+    padding-top: calc(6 * var(--space));
+    padding-bottom: var(--vspace-4);
 }
 
-.left {
-    width: 20vw;
-    text-align: right;
-    color: black;
-    margin: 10px;
-    padding: 10px;
+.s-resume__section {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--vspace-0_75);
+    margin-bottom: var(--vspace-2_5);
 }
 
-.right {
-    width: 80vw;
-    margin: 10px;
+.s-resume__section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
-/* MOBILE NAVIGATION STYLES */
+/* ------------------------------------------------------------------- 
+ * ## resume block
+ * ------------------------------------------------------------------- */
+.resume-block {
+    margin-bottom: var(--vspace-1_75);
+}
 
-@media all and (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
+.resume-block h4 {
+    line-height: 1.080;
+    margin-top: 0;
+    margin-bottom: var(--vspace-0_25);
+}
+
+.resume-block__header-meta {
+    font-family: var(--font-2);
+    font-size: calc(var(--text-size) * 1.1111);
+    font-style: italic;
+    margin-top: -.4rem;
+    margin-bottom: var(--vspace-0_75);
+}
+
+.resume-block__header-meta span:first-child {
+    margin-right: .6rem;
+}
+
+.resume-block__header-date {
+    display: inline-block;
+    font-family: var(--font-1);
+    font-size: calc(var(--text-size) * 0.8889);
+    font-size: var(--text-sm);
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--color-text-light);
+}
+
+.resume-block__header-date::before {
+    content: "\2022";
+    color: var(--color-text);
+    margin-right: .2rem;
+}
+
+/* ------------------------------------------------------------------- 
+ * responsive:
+ * resume
+ * ------------------------------------------------------------------- */
+@media screen and (max-width: 800px) {
+    .s-resume {
+        padding-top: var(--vspace-4);
     }
-    nav ul li {
+    .s-resume__section .column:first-child {
         text-align: center;
     }
+}
+
+
+
+/* ------------------------------------------------------------------- 
+ * ## grid variables
+ * ------------------------------------------------------------------- */
+:root {
+
+    /* widths for rows and containers
+     */
+    --width-full    : 100%;
+    --width-max     : 1080px;
+    --width-wide    : 1400px;
+    --width-wider   : 1600px;
+    --width-widest  : 1800px;
+    --width-narrow  : 800px;
+    --width-narrower: 600px;
+    --width-grid-max: var(--width-max);
+
+    /* gutters
+     */
+    --gutter-lg : 2.4rem;
+    --gutter-md : 2rem;
+    --gutter-mob: 1rem;
+}
+
+
+
+
+
+
+
+/* ===================================================================
+ * # Grid v3.0.0
+ *
+ *   -----------------------------------------------------------------
+ * - Grid breakpoints are based on MAXIMUM WIDTH media queries, 
+ *   meaning they apply to that one breakpoint and ALL THOSE BELOW IT.
+ * - Grid columns without a specified width will automatically layout 
+ *   as equal width columns.
+ * ------------------------------------------------------------------- */
+
+/* rows
+ * ------------------------------------- */
+.row {
+    width: 92%;
+    max-width: var(--width-grid-max);
+    margin: 0 auto;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row wrap;
+}
+
+.row .row {
+    width: auto;
+    max-width: none;
+    margin-left: calc(var(--gutter-lg) * -1);
+    margin-right: calc(var(--gutter-lg) * -1);
+}
+
+/* columns
+ * -------------------------------------- */
+.column {
+    -ms-flex: 1 1 0%;
+    -webkit-box-flex: 1;
+    flex: 1 1 0%;
+    padding: 0 var(--gutter-lg);
+}
+
+.collapse>.column, .column.collapse {
+    padding: 0;
+}
+
+/* flex row containers utility classes
+ */
+.row.row-wrap {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.row.row-nowrap {
+    -ms-flex-wrap: none;
+    flex-wrap: nowrap;
+}
+
+.row.row-y-top {
+    -ms-flex-align: start;
+    -webkit-box-align: start;
+    align-items: flex-start;
+}
+
+.row.row-y-bottom {
+    -ms-flex-align: end;
+    -webkit-box-align: end;
+    align-items: flex-end;
+}
+
+.row.row-y-center {
+    -ms-flex-align: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.row.row-stretch {
+    -ms-flex-align: stretch;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+}
+
+.row.row-baseline {
+    -ms-flex-align: baseline;
+    -webkit-box-align: baseline;
+    align-items: baseline;
+}
+
+.row.row-x-left {
+    -ms-flex-pack: start;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
+
+.row.row-x-right {
+    -ms-flex-pack: end;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+
+.row.row-x-center {
+    -ms-flex-pack: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+/* flex item utility alignment classes
+ */
+.align-center {
+    margin: auto;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+}
+
+.align-left {
+    margin-right: auto;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+}
+
+.align-right {
+    margin-left: auto;
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+}
+
+.align-x-center {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.align-x-left {
+    margin-right: auto;
+}
+
+.align-x-right {
+    margin-left: auto;
+}
+
+.align-y-center {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center;
+}
+
+.align-y-top {
+    -webkit-align-self: flex-start;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+}
+
+.align-y-bottom {
+    -webkit-align-self: flex-end;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
 }
