@@ -83,6 +83,8 @@ img {
    
 }
 
+/* Vertical lines between columns*/
+
 .vertical {
     border-left: 3px solid black;
     height: 185px;
@@ -92,7 +94,7 @@ img {
 }
 .vertical2 {
     border-left: 3px solid black;
-    height: 650px;
+    height: 625px;
     position:absolute;
     left: 25%;
     margin: 10px;
@@ -138,14 +140,14 @@ p {
 .box {
     position: relative;
     background-color: grey;
-    height: 20%;
+    height: 30%;
     width: 15%;
 }
 
 .boxes {
     position: relative;
     background-color: grey;
-    height: 40%;
+    height: 50%;
     width: 35%;
 }
 
@@ -160,7 +162,6 @@ p {
     bottom: 50px;
     left: 2;
 }
-
 
 /* CONTACT STYLES */
 
@@ -190,3 +191,26 @@ p {
         margin-left: 0%;
     }
 }
+
+@media only screen and (device-width: 400px)  {
+    .portfolio-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .vertical, .vertical2 {
+        border-left: none;
+    }
+
+    .info li {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .box, .boxes {
+        background-color: transparent; 
+    }
+    
+
+  }
+  
